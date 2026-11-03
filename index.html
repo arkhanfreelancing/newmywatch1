@@ -1,5 +1,309 @@
-<html>
-  <title>
-    Hi all
-  </title>
+<!doctype html>
+<!-- Sportsurge watch page.
+     When the final main-site domain is chosen, replace every
+     https://sportsurge.boats link below. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Sportsurge Sports Stream</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="stream.css" />
+</head>
+<body>
+<div class="site-title-section">
+  <p>Sportsurge Sports Stream</p>
+</div>
+
+<!-- Header Menus -->
+<header class="main-header">
+  <ul class="nav-menu">
+    <li class="menu-item"><a href="https://sportsurge.boats/NFL/">NFL</a></li>
+    <li class="menu-item"><a href="https://sportsurge.boats/NBA/">NBA</a></li>
+    <li class="menu-item"><a href="https://sportsurge.boats/MLB/">MLB</a></li>
+    <li class="menu-item"><a href="https://sportsurge.boats/UFC/">UFC</a></li>
+    <li class="menu-item"><a href="https://sportsurge.boats/WWE/">WWE</a></li>
+    <li class="more-btn"><a href="https://sportsurge.boats/">More ➝</a></li>
+  </ul>
+</header>
+
+<!-- Important Notice -->
+<div id="importantNotice" class="important-notice" role="region" aria-label="Important notice">
+  <div class="notice-inner">
+    <span class="notice-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+        <path d="M17 3H7a2 2 0 0 0-2 2v16l7-3 7 3V5a2 2 0 0 0-2-2z"/>
+      </svg>
+    </span>
+    <div class="notice-body">
+      <strong class="notice-badge">Important Notice</strong>
+      <p class="notice-text">
+        Bookmark our schedule site
+        <a href="https://sportsurge.boats" rel="nofollow noopener">sportsurge.boats</a>
+        or download our app so you don't lose us.
+      </p>
+      <div class="notice-actions">
+        <a href="https://sportsurge.boats" rel="nofollow noopener" class="notice-btn notice-btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+            <path d="M17 3H7a2 2 0 0 0-2 2v16l7-3 7 3V5a2 2 0 0 0-2-2z"/>
+          </svg>
+          Bookmark Sportsurge
+        </a>
+        <a href="https://github.com/arkhangaming648/spporttsurgesapk/releases/download/v3.3/Sportsurge-3.3.apk" rel="nofollow noopener" class="notice-btn notice-btn-app">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+            <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24A11.463 11.463 0 0 0 12 8c-1.9 0-3.68.53-5.19 1.44L4.93 5.7c-.19-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85L5.68 9.48C3.65 11.07 2.5 13.4 2.5 16h19c0-2.6-1.15-4.93-3.9-6.52zM7 14.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+          Download Android App
+        </a>
+      </div>
+    </div>
+    <button type="button" id="noticeClose" class="notice-close" aria-label="Dismiss notice">&times;</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <h1 id="matchTitle">Loading...</h1>
+  <p class="subtitle" id="matchStatus">Fetching match info...</p>
+</header>
+
+<main class="container">
+  <section>
+    <div class="player-wrap">
+      <iframe
+        id="playerFrame"
+        title="Stream player"
+        frameborder="0"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture;">
+      </iframe>
+    </div>
+
+    <div id="channelsList" class="channels-list"></div>
+
+    <p id="streamStatus" class="status"></p>
+
+    <!-- In-content promo -->
+    <div class="promo-card">
+      <div class="promo-card-main">
+        <span class="promo-card-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17 3H7a2 2 0 0 0-2 2v16l7-3 7 3V5a2 2 0 0 0-2-2z"/>
+          </svg>
+        </span>
+        <div>
+          <strong>Streams not loading?</strong>
+          <p>Try another channel above. Our full schedule is always available at <a href="https://sportsurge.boats" rel="nofollow noopener">sportsurge.boats</a>.</p>
+        </div>
+      </div>
+      <a href="https://github.com/arkhangaming648/spporttsurgesapk/releases/download/v3.3/Sportsurge-3.3.apk" rel="nofollow noopener" class="promo-card-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true">
+          <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24A11.463 11.463 0 0 0 12 8c-1.9 0-3.68.53-5.19 1.44L4.93 5.7c-.19-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85L5.68 9.48C3.65 11.07 2.5 13.4 2.5 16h19c0-2.6-1.15-4.93-3.9-6.52zM7 14.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </svg>
+        Get the App
+      </a>
+    </div>
+  </section>
+</main>
+
+<style>
+/* =========================================
+   AMAZON SPORTS AFFILIATE BANNER
+   ========================================= */
+.amazon-sports-ad {
+  width: 100%;
+  max-width: 1200px;
+  margin: 12px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.amazon-ad-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  line-height: 0;
+  text-decoration: none;
+  background: #080808;
+}
+
+.amazon-ad-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.amazon-paid-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 7px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 3px;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.amazon-associate-disclosure {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4px auto 12px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #888888;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+@media (hover: hover) and (min-width: 769px) {
+  .amazon-ad-link img {
+    transition: transform 0.2s ease;
+  }
+
+  .amazon-ad-link:hover img {
+    transform: scale(1.015);
+  }
+}
+
+@media (max-width: 768px) {
+  .amazon-sports-ad {
+    margin: 8px auto;
+    padding: 0 6px;
+  }
+
+  .amazon-ad-link {
+    border-radius: 6px;
+  }
+
+  .amazon-paid-label {
+    top: 5px;
+    left: 5px;
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .amazon-associate-disclosure {
+    padding: 0 7px;
+    margin-top: 3px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amazon-sports-ad {
+    margin: 6px auto;
+    padding: 0 4px;
+  }
+
+  .amazon-ad-link {
+    border-radius: 5px;
+  }
+
+  .amazon-paid-label {
+    top: 4px;
+    left: 4px;
+    padding: 2px 4px;
+    font-size: 8px;
+  }
+
+  .amazon-associate-disclosure {
+    padding: 0 5px;
+    margin: 3px 0 8px;
+    font-size: 8px;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- Amazon affiliate sports TV banner -->
+<div class="amazon-sports-ad">
+  <a
+    class="amazon-ad-link"
+    href="https://amzn.to/3Ue3jbR"
+    rel="nofollow sponsored noopener"
+    aria-label="Shop the TCL 55 inch QM6K TV on Amazon"
+  >
+    <img
+      src="tcl55inchamazon.png"
+      alt="TCL 55-inch QM6K Mini-LED 4K QLED TV - Shop on Amazon"
+      loading="eager"
+      decoding="async"
+      width="1810"
+      height="547"
+    >
+    <span class="amazon-paid-label">Paid link</span>
+  </a>
+</div>
+
+<div class="amazon-associate-disclosure">
+  As an Amazon Associate I earn from qualifying purchases.
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-promo">
+    <div class="footer-promo-col">
+      <span class="footer-promo-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <path d="M17 3H7a2 2 0 0 0-2 2v16l7-3 7 3V5a2 2 0 0 0-2-2z"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Full Schedule</h3>
+        <p>Bookmark <a href="https://sportsurge.boats" rel="nofollow noopener">sportsurge.boats</a> so you never lose us.</p>
+      </div>
+    </div>
+    <div class="footer-promo-col">
+      <span class="footer-promo-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24A11.463 11.463 0 0 0 12 8c-1.9 0-3.68.53-5.19 1.44L4.93 5.7c-.19-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85L5.68 9.48C3.65 11.07 2.5 13.4 2.5 16h19c0-2.6-1.15-4.93-3.9-6.52zM7 14.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Android App</h3>
+        <p>Stream safely on the go with our official app.</p>
+        <a href="https://github.com/arkhangaming648/spporttsurgesapk/releases/download/v3.3/Sportsurge-3.3.apk" rel="nofollow noopener" class="footer-promo-btn">Download App</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-box">
+    <h3>Disclaimer</h3>
+    <p>
+      We do not host or own any media content; all streams are sourced from
+      third-party sites. We do not take any responsibility for copyright issues.
+      Copyright concerns should be directed to the original host. We have no
+      control over ads in embedded players and receive no revenue from them.
+      <a href="https://sportsurge.boats/Disclaimer/">Learn More!</a>
+    </p>
+  </div>
+
+  <ul class="footer-menu">
+    <li><a href="https://sportsurge.boats/">Home</a></li>
+    <li><a href="https://sportsurge.boats/About/">About</a></li>
+    <li><a href="https://sportsurge.boats/Terms/">Terms</a></li>
+    <li><a href="https://sportsurge.boats/Privacy/">Privacy</a></li>
+    <li><a href="https://sportsurge.boats/Disclaimer/">Disclaimer</a></li>
+    <li><a href="https://sportsurge.boats/DMCA/">DMCA</a></li>
+    <li><a href="https://sportsurge.boats/Contact/">Contact Us</a></li>
+  </ul>
+  <p>© 2026 Sportsurge.boats. All rights reserved.</p>
+</footer>
+
+<script src="stream.js?v=20261103" defer></script>
+</body>
 </html>
